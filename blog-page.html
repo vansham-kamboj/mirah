@@ -34,6 +34,20 @@
         .nav-item:hover > a::after, .nav-item > a.active::after { transform: scaleX(1); transform-origin: left; }
 
         .nav-icons { display: flex; align-items: center; }
+        .menu-toggle {
+            display: none;
+            border: 1px solid currentColor;
+            background: transparent;
+            color: inherit;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .menu-toggle svg { width: 20px; height: 20px; }
         .login-link { text-decoration: none; color: inherit; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border: 1px solid currentColor; padding: 10px 24px; border-radius: 4px; position: relative; overflow: hidden; z-index: 1; transition: color 0.25s ease; }
         .login-link::before { content: ''; position: absolute; inset: 0; background: var(--pure-white); transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1); z-index: -1; }
         .navbar.scrolled .login-link::before { background: var(--navy-blue); }
@@ -128,13 +142,98 @@
         }
         .newsletter-form button:hover::before { transform: scaleX(1); }
         .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-light); font-size: 12px; color: var(--text-muted); letter-spacing: 0.5px; }
+
+        @media (max-width: 1080px) {
+            .navbar,
+            .navbar.scrolled { padding-left: 28px; padding-right: 28px; }
+            .nav-links { gap: 24px; }
+            .article-wrapper { margin-left: 40px; margin-right: 40px; padding: 56px 48px; }
+            .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 35px; }
+        }
+
+        @media (max-width: 820px) {
+            body.menu-open { overflow: hidden; }
+            .navbar,
+            .navbar.scrolled { padding: 18px 20px; }
+            .logo { font-size: 28px; gap: 8px; }
+            .logo-mark { width: 30px; height: 30px; }
+            .menu-toggle { display: inline-flex; z-index: 1102; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: min(320px, 84vw);
+                height: 100vh;
+                padding: 96px 28px 32px;
+                background: rgba(255, 255, 255, 0.98);
+                color: var(--navy-blue);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 10px;
+                box-shadow: -20px 0 40px rgba(0, 0, 0, 0.08);
+                transform: translateX(100%);
+                transition: transform 0.35s ease;
+                z-index: 1100;
+            }
+            .nav-links.open { transform: translateX(0); }
+            .nav-item { width: 100%; padding: 0; }
+            .nav-item > a { width: 100%; padding: 14px 0; font-size: 13px; }
+            .nav-icons { margin-left: auto; margin-right: 12px; }
+            .login-link { padding: 9px 18px; font-size: 11px; letter-spacing: 1.2px; }
+            .article-hero { height: 58vh; min-height: 420px; padding: 0 20px 72px; }
+            .hero-text h1 { font-size: 38px; }
+            .hero-text p { font-size: 13px; }
+            .article-wrapper,
+            .related-section,
+            .footer { margin-left: 0; margin-right: 0; padding-left: 20px; padding-right: 20px; }
+            .article-wrapper {
+                margin-top: -48px;
+                margin-bottom: 72px;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                border-radius: 8px;
+            }
+            .article-content { font-size: 15px; line-height: 1.8; }
+            .article-content h2 { font-size: 28px; margin-top: 40px; }
+            .article-content h3 { font-size: 22px; }
+            .article-content > p:first-of-type::first-letter { font-size: 48px; margin-right: 12px; }
+            blockquote { font-size: 22px; padding: 0 20px; }
+            .related-section { padding-bottom: 72px; }
+            .related-header h2 { font-size: 32px; }
+            .blog-grid { grid-template-columns: 1fr; gap: 20px; }
+            .blog-content { padding: 24px; }
+            .footer { padding-top: 64px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+        }
+
+        @media (max-width: 520px) {
+            .nav-icons { display: none; }
+            .navbar,
+            .navbar.scrolled { padding: 16px; }
+            .article-hero { min-height: 380px; padding-bottom: 56px; }
+            .hero-text h1 { font-size: 31px; }
+            .hero-text p { font-size: 12px; line-height: 1.6; }
+            .meta-tag { font-size: 10px; letter-spacing: 1.4px; }
+            .article-wrapper { padding-left: 16px; padding-right: 16px; }
+            .article-content > p:first-of-type::first-letter { font-size: 40px; margin: 6px 10px 0 0; }
+            blockquote { font-size: 20px; padding: 0 12px; }
+            .article-footer { flex-direction: column; align-items: flex-start; }
+            .related-header h2 { font-size: 28px; }
+        }
     </style>
 </head>
 <body>
 
     <header class="navbar" id="main-nav">
         <a href="index.html" class="logo"><img src="images/mirah-logo.png" alt="Mirah Logo" class="logo-mark"><span>Mirah</span></a>
-        <nav class="nav-links">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+        </button>
+        <nav class="nav-links" id="primaryNav">
             <div class="nav-item"><a href="index.html">HOME</a></div>
             <div class="nav-item"><a href="about.html">ABOUT</a></div>
             <div class="nav-item"><a href="blogs.html" class="active">BLOGS</a></div>
@@ -278,6 +377,30 @@
             const nav = document.getElementById('main-nav');
             if (window.scrollY > 50) { nav.classList.add('scrolled'); }
             else { nav.classList.remove('scrolled'); }
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const primaryNav = document.getElementById('primaryNav');
+        const navLinks = primaryNav.querySelectorAll('a');
+
+        function setMenuState(isOpen) {
+            primaryNav.classList.toggle('open', isOpen);
+            document.body.classList.toggle('menu-open', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = !primaryNav.classList.contains('open');
+            setMenuState(isOpen);
+        });
+
+        navLinks.forEach(link => link.addEventListener('click', () => {
+            if (window.innerWidth <= 820) setMenuState(false);
+        }));
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 820) setMenuState(false);
         });
     </script>
 </body>
