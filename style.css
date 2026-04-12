@@ -1075,7 +1075,7 @@ h1 i, h2 i, h3 i {
     z-index: 1;
 }
 
-.blog-card::before, .process-col::before, .contact-form-box::before {
+.blog-card::before, .process-col::before, .contact-form-box::before, .gallery-item::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1088,11 +1088,17 @@ h1 i, h2 i, h3 i {
     pointer-events: none;
 }
 
+/* Gallery items need a higher z-index and slightly brighter gradient so it shows over the image */
+.gallery-item::before {
+    z-index: 2;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+}
+
 .contact-form-box::before {
     background: linear-gradient(90deg, transparent, rgba(0,0,0,0.02), transparent);
 }
 
-.blog-card:hover::before, .process-col:hover::before, .contact-form-box:hover::before {
+.blog-card:hover::before, .process-col:hover::before, .contact-form-box:hover::before, .gallery-item:hover::before {
     left: 100%;
 }
 
