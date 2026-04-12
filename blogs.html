@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Mirah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-brand">Mirah</a>
+            <div class="navbar-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link" style="opacity:1;">Blogs</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="navbar-action" style="display: flex; align-items: center;">
+                <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Start Project</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" style="display:none; background:transparent; border:none; color:var(--text-light); cursor:pointer; padding:8px; margin-left:16px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container hero-content">
+            <h1 class="page-title">Insights & <i>Inspiration</i></h1>
+            <p class="page-subtitle">Discover the latest trends, manufacturing guides, and stories from our community of artisans.</p>
+        </div>
+    </section>
+
+    <!-- Blogs Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <a href="#" class="blog-card">
+                    <div class="blog-card-img" style="background-image: url('assets/media__1775977228501.png'); background-color:#1c2635;"></div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">Guides · 5 Min Read</div>
+                        <h3 class="blog-title">How to Prepare Your First Jewellery Design File</h3>
+                        <p class="blog-excerpt">Ensure your CAD designs have exactly what manufacturers need to give you an accurate bid.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card">
+                    <div class="blog-card-img" style="background-image: url('assets/media__1775977244680.png'); background-color:#0c111a;"></div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">Artisan Spotlight · 8 Min Read</div>
+                        <h3 class="blog-title">Inside a Legacy Deira Gold Souk Atelier</h3>
+                        <p class="blog-excerpt">We speak with the master craftsmen blending traditional Middle Eastern bench skills with extreme modern precision.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card">
+                    <div class="blog-card-img" style="background-image: url('assets/media__1775977260463.png'); background-color:#2a364a;"></div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">Market Insights · 4 Min Read</div>
+                        <h3 class="blog-title">Understanding Gold Karats and Bidding Prices</h3>
+                        <p class="blog-excerpt">Why an 18k and 22k quote can drastically vary, and how to choose what's right for your collection.</p>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand-col">
+                <a href="index.html" class="footer-brand">Mirah</a>
+                <p class="footer-desc">Your idea deserves to be beautifully made. Choose the perfect combination of price, craftsmanship, and timeline.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4 class="footer-heading">Company</h4>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="blogs.html" class="footer-link">Blogs</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-links-col">
+                <h4 class="footer-heading">Legal</h4>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Mirah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="blogModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-img"></div>
+            <div class="modal-body-wrapper">
+                <h2 class="modal-title"></h2>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

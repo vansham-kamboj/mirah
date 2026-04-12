@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mirah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-brand">Mirah</a>
+            <div class="navbar-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link">Blogs</a>
+                <a href="contact.html" class="nav-link" style="opacity:1;">Contact</a>
+            </div>
+            <div class="navbar-action" style="display: flex; align-items: center;">
+                <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">Start Project</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" style="display:none; background:transparent; border:none; color:var(--text-light); cursor:pointer; padding:8px; margin-left:16px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="min-height: 40vh; padding: 120px 0 40px;">
+        <div class="container hero-content">
+            <h1 class="page-title">Get in <i>touch</i></h1>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="content-section">
+        <div class="container contact-wrapper">
+            <div class="contact-info">
+                <div class="label-badge">
+                    <span class="dot"></span> WE ARE HERE
+                </div>
+                <h3>Let's bring your<br>ideas to life.</h3>
+                <p>Have questions about placing a bid? Want to join as a verified manufacturer? Reach out to our dedicated team via email or via the contact form.</p>
+                
+                <div class="contact-details">
+                    <dl class="detail-item">
+                        <dt>General Enquiries</dt>
+                        <dd>hello@mirah.co</dd>
+                    </dl>
+                    <dl class="detail-item">
+                        <dt>Manufacturer Application</dt>
+                        <dd>partners@mirah.co</dd>
+                    </dl>
+                    <dl class="detail-item">
+                        <dt>Global Office</dt>
+                        <dd>Almas Tower, JLT, Dubai, UAE</dd>
+                    </dl>
+                    <dl class="detail-item mt-32">
+                        <dt>Phone</dt>
+                        <dd>+971 4 392 8412</dd>
+                    </dl>
+                </div>
+            </div>
+            
+            <div class="contact-form-box">
+                <form class="contact-form" action="#" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="E.g. Jane Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="jane@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand-col">
+                <a href="index.html" class="footer-brand">Mirah</a>
+                <p class="footer-desc">Your idea deserves to be beautifully made. Choose the perfect combination of price, craftsmanship, and timeline.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4 class="footer-heading">Company</h4>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="blogs.html" class="footer-link">Blogs</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-links-col">
+                <h4 class="footer-heading">Legal</h4>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Mirah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
